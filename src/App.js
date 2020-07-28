@@ -28,6 +28,15 @@ export default function App() {
     setCity(event.target.value);
   }
 
+  let link = (
+    <h4>
+      <a href="https://github.com/jielianglin/weather-app-vanilla-js">
+        Open-source code
+      </a>{" "}
+      by Jie Liang Lin
+    </h4>
+  );
+
   let form = (
     <div>
       <h1> Weather App</h1>
@@ -58,9 +67,14 @@ export default function App() {
             <img src={weather.icon} alt="Weather Icon" />{" "}
           </li>
         </ul>
+        {link}
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form} {link}
+      </div>
+    );
   }
 }
