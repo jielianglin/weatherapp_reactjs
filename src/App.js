@@ -30,7 +30,7 @@ export default function App() {
 
   let link = (
     <h4>
-      <a href="https://github.com/jielianglin/weather-app-vanilla-js">
+      <a href="https://github.com/jielianglin/weatherapp_reactjs">
         Open-source code
       </a>{" "}
       by Jie Liang Lin
