@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function WeatherTemperature(props) {
-  const [unit, setUnit] = useState("metrics");
+  const [unit, setUnit] = useState("celsius");
 
   function converttoFahrenheit(event) {
     event.preventDefault();

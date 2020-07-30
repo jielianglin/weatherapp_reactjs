@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Search() {
   const [city, setCity] = useState(null);
@@ -59,8 +60,7 @@ export default function Search() {
             <img src={weather.icon} alt="Weather Icon" />{" "}
           </div>
           <div className="col-md-5">
-            {Math.round(weather.temperature)} <button>°C</button>|
-            <button>°F</button>{" "}
+            <WeatherTemperature celsius={props.data.temperature} />
           </div>
         </div>
         <div className="col-md-1" />
