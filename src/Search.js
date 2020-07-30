@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function Search() {
   const [city, setCity] = useState(null);
@@ -10,6 +11,7 @@ export default function Search() {
     setWeather({
       ready: true,
       date: new Date(response.data.dt * 1000),
+      city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -28,26 +30,18 @@ export default function Search() {
   function updateCity(event) {
     setCity(event.target.value);
   }
-
-  let link = (
-    <h4>
-      <a href="https://github.com/jielianglin/weatherapp_reactjs">
-        Open-source code
-      </a>{" "}
-      by Jie Liang Lin
-    </h4>
-  );
-
   let form = (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="Search"
-          placeholder="Search a city.."
-          onChange={updateCity}
-        />
-        <input type="Submit" value="Search" />
-      </form>
+    <div className="Form">
+      <div className="row">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="Search"
+            placeholder="Search a city.."
+            onChange={updateCity}
+          />{" "}
+          <input type="Submit" value="Search" className="btn btn-primary" />
+        </form>
+      </div>
     </div>
   );
 
@@ -56,28 +50,30 @@ export default function Search() {
       <div>
         {form}
         <br />
-        <h2>{city}</h2>
-        <ul>
-          <li>
-            <FormattedDate date={weather.date} />
-          </li>
-          <li>Temperature: {Math.round(weather.temperature)} °C </li>
-          <li> Description: {weather.description}</li>
-          <li> Wind: {weather.wind} km/h</li>
-          <li> Humidity: {weather.humidity}%</li>
-          <li>
-            {" "}
+        <div className="Current">
+          <h2>{city}</h2>
+          <FormattedDate date={weather.date} />
+        </div>
+        <div className="row">
+          <div className="col-md-2">
             <img src={weather.icon} alt="Weather Icon" />{" "}
-          </li>
-        </ul>
-        {link}
+          </div>
+          <div className="col-md-5">
+            {Math.round(weather.temperature)} <button>°C</button>|
+            <button>°F</button>{" "}
+          </div>
+        </div>
+        <div className="col-md-1" />
+        <div className="col-md-4">
+          <ul>
+            <li> Description: {weather.description}</li>
+            <li> Wind: {weather.wind} km/h</li>
+            <li> Humidity: {weather.humidity}%</li>
+          </ul>
+        </div>
       </div>
     );
   } else {
-    return (
-      <div>
-        {form} {link}
-      </div>
-    );
+    return <div>{form}</div>;
   }
 }
