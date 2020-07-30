@@ -4,7 +4,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import WeatherTemperature from "./WeatherTemperature";
 
-export default function Search() {
+export default function Search(props) {
   const [city, setCity] = useState(null);
   const [weather, setWeather] = useState({ ready: false });
 
