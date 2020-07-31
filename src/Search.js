@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-import WeatherTemperature from "./WeatherTemperature";
 
 export default function Search(props) {
   const [city, setCity] = useState(null);
@@ -33,16 +33,19 @@ export default function Search(props) {
   }
   let form = (
     <div className="Form">
-      <div className="row">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="Search"
-            placeholder="Search a city.."
-            onChange={updateCity}
-          />{" "}
-          <input type="Submit" value="Search" className="btn btn-primary" />
-        </form>
-      </div>
+      <container>
+        <div className="row">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="Search"
+              placeholder="Search a city.."
+              className="search-input"
+              onChange={updateCity}
+            />
+            <input type="Submit" value="Search" className="btn btn-primary" />
+          </form>
+        </div>
+      </container>
     </div>
   );
 
@@ -51,29 +54,35 @@ export default function Search(props) {
       <div>
         {form}
         <br />
+
         <div className="Current">
-          <h2>{city}</h2>
+          <h2 className="CurrentCity">{city}</h2>
           <FormattedDate date={weather.date} />
         </div>
-        <div className="row">
-          <div className="col-md-2">
-            <img src={weather.icon} alt="Weather Icon" />{" "}
+        <br />
+        <container fluid>
+          <div className="row">
+            <div className="Icon col-md-2">
+              <img src={weather.icon} alt="Weather Icon" />{" "}
+            </div>
+            <div className="col-md-5">
+              <WeatherTemperature celsius={weather.temperature} />
+            </div>
+
+            <div className="col-md-1" />
+            <div className="col-md-4">
+              <ul>
+                <li>{weather.description}</li>
+                <li>Wind: {weather.wind} km/h</li>
+                <li>Humidity: {weather.humidity}%</li>
+              </ul>
+            </div>
           </div>
-          <div className="col-md-5">
-            <WeatherTemperature celsius={props.data.temperature} />
-          </div>
-        </div>
-        <div className="col-md-1" />
-        <div className="col-md-4">
-          <ul>
-            <li> Description: {weather.description}</li>
-            <li> Wind: {weather.wind} km/h</li>
-            <li> Humidity: {weather.humidity}%</li>
-          </ul>
-        </div>
+        </container>
+        <hr />
       </div>
     );
   } else {
-    return <div>{form}</div>;
+    return form;
   }
 }

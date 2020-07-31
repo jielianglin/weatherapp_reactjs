@@ -6,3 +6,70 @@
   margin: 40px 40px 80px 40px;
   text-align: center;
 }
+
+form {
+  display: block;
+  margin: 0 auto;
+}
+.search-input {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  height: 39px;
+  width: 100%;
+  outline: 0;
+  background-color: white;
+  text-align: center;
+}
+
+.Weatherinfo row {
+  display: block;
+  margin: 0 auto;
+}
+.CurrentCity {
+  font-size: 50px;
+}
+
+.CurrentCity:first-letter {
+  text-transform: capitalize;
+}
+.CurrentDateTime {
+  font-size: 20px;
+}
+
+.Icon img {
+  position: relative;
+  top: -12px;
+  width: 150px;
+  height: 150px;
+}
+.temperature {
+  position: relative;
+  top: -3px;
+  font-size: 90px;
+}
+
+.unit {
+  position: relative;
+  top: -50px;
+}
+
+.unit .active {
+  color: #757575;
+  cursor: default;
+}
+
+.unit .active:hover {
+  text-decoration: underline;
+}
+
+ul {
+  position: relative;
+  top: 25px;
+  text-align: left;
+  list-style-type: none;
+  inset-block: none;
+}
+
+ul:first-letter {
+  text-transform: capitalize;
+}

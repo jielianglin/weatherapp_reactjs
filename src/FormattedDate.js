@@ -16,7 +16,7 @@ export default function FormattedDate(props) {
   let minutes = props.date.getMinutes();
 
   return (
-    <div>
+    <div className="CurrentDateTime">
       {" "}
       {day} {hours}:{minutes}
     </div>
