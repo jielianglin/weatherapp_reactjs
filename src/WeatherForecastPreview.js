@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherForecastPreview(props) {
   function getDate() {
@@ -15,10 +16,8 @@ export default function WeatherForecastPreview(props) {
     <div className="WeatherForecastPreview col">
       {getDate()}
       <br />
-      <img
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-        alt=""
-      />
+      <WeatherIcon />
+      <br />
       {getTemperature()}
     </div>
   );
