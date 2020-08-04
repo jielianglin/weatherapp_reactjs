@@ -15,6 +15,10 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast">
         10:00
         {Math.round(forecast.list[0].main.temp)}
+        <img
+          src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          alt=""
+        />
       </div>
     );
   } else {
