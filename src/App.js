@@ -9,12 +9,10 @@ export default function App() {
         <Search />
         <hr />
         <footer>
-          <h7>
-            <a href="https://github.com/jielianglin/weatherapp_reactjs">
-              Open-source code
-            </a>{" "}
-            by Jie Liang Lin
-          </h7>
+          <a href="https://github.com/jielianglin/weatherapp_reactjs">
+            Open-source code
+          </a>{" "}
+          by Jie Liang Lin
         </footer>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
+import WeatherForecast from "./WeatherForecast";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Search(props) {
@@ -60,7 +61,7 @@ export default function Search(props) {
           <FormattedDate date={weather.date} />
         </div>
         <br />
-        <container fluid>
+        <container>
           <div className="row">
             <div className="Icon col-md-2">
               <img src={weather.icon} alt="Weather Icon" />{" "}
@@ -80,6 +81,7 @@ export default function Search(props) {
           </div>
         </container>
         <hr />
+        <WeatherForecast city="Berlin" />
       </div>
     );
   } else {
