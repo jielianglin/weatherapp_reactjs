@@ -16,7 +16,7 @@ export default function WeatherForecastPreview(props) {
     <div className="WeatherForecastPreview col">
       {getDate()}
       <br />
-      <WeatherIcon />
+      <WeatherIcon code={forecast.list[0].weather[0].icon} />
       <br />
       {getTemperature()}
     </div>
