@@ -40,6 +40,7 @@ export default function Search(props) {
               type="Search"
               placeholder="Search a city.."
               className="search-input"
+              autoFocus="on"
               onChange={updateCity}
             />
           </div>

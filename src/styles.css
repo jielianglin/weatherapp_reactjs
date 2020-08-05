@@ -58,8 +58,9 @@ form {
   cursor: default;
 }
 
-.unit .active:hover {
-  text-decoration: underline;
+.unit a:hover {
+  text-decoration: none;
+  cursor: default;
 }
 
 ul {
