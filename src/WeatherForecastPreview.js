@@ -7,11 +7,11 @@ export default function WeatherForecastPreview(props) {
 
   let celsiusTemperature = Math.round(props.data.main.temp);
 
-  function getCelsiusTemperature() {
+  function getForecastCelsius() {
     return `${celsiusTemperature}°C`;
   }
 
-  function getFahrenheitTemperature() {
+  function getForecastFahrenheit() {
     setUnit("fahrenheit");
     let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
     return `${fahrenheitTemperature}°F`;
@@ -24,7 +24,7 @@ export default function WeatherForecastPreview(props) {
         <br />
         <WeatherIcon code={props.data.weather[0].icon} />
         <br />
-        {getCelsiusTemperature()}
+        {getForecastCelsius()}
       </div>
     );
   } else {
@@ -34,7 +34,7 @@ export default function WeatherForecastPreview(props) {
         <br />
         <WeatherIcon code={props.data.weather[0].icon} />
         <br />
-        {getFahrenheitTemperature()}
+        {getForecastFahrenheit()}
       </div>
     );
   }
