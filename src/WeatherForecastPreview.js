@@ -28,12 +28,14 @@ export default function WeatherForecastPreview(props) {
       </div>
     );
   } else {
-    <div className="ForecastFahrenheitPreview col">
-      <WeatherForecastTime time={props.data.dt} />
-      <br />
-      <WeatherIcon code={props.data.weather[0].icon} />
-      <br />
-      {getFahrenheitTemperature()}
-    </div>;
+    return (
+      <div className="ForecastFahrenheitPreview col">
+        <WeatherForecastTime time={props.data.dt} />
+        <br />
+        <WeatherIcon code={props.data.weather[0].icon} />
+        <br />
+        {getFahrenheitTemperature()}
+      </div>
+    );
   }
 }
