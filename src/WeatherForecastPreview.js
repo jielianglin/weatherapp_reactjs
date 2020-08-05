@@ -5,16 +5,19 @@ import WeatherForecastTime from "./WeatherForecastTime";
 export default function WeatherForecastPreview(props) {
   const [unit, setUnit] = useState("celsius");
 
-  let celsiusTemperature = Math.round(props.data.main.temp);
+  let celsiusForecastTemperature = Math.round(props.data.main.temp);
 
   function getForecastCelsius() {
-    return `${celsiusTemperature}°C`;
+    return `${celsiusForecastTemperature}°C`;
   }
 
   function getForecastFahrenheit() {
     setUnit("fahrenheit");
-    let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-    return `${fahrenheitTemperature}°F`;
+
+    let fahrenheitForecastTemperature = Math.round(
+      (celsiusForecastTemperature * 9) / 5 + 32
+    );
+    return `${fahrenheitForecastTemperature}°F`;
   }
 
   if (unit === "celsius") {
