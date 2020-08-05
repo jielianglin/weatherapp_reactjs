@@ -33,17 +33,21 @@ export default function Search(props) {
   }
   let form = (
     <div className="Form">
-      <div className="row">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="Search"
-            placeholder="Search a city.."
-            className="search-input"
-            onChange={updateCity}
-          />
-          <input type="Submit" value="Search" className="btn btn-primary" />
-        </form>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="Search"
+              placeholder="Search a city.."
+              className="search-input"
+              onChange={updateCity}
+            />
+          </div>
+          <div className="col-3">
+            <input type="Submit" value="Search" className="btn btn-primary" />
+          </div>
+        </div>
+      </form>
     </div>
   );
 
