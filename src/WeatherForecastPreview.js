@@ -1,24 +1,21 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import WeatherForecastTime from "./WeatherForecastTime";
 
 export default function WeatherForecastPreview(props) {
-  function getDate() {
-    let date = new Date(props.data.dt * 1000);
-    let hours = date.getHours();
-    return `${hours}:00`;
+  function getCelsiusTemperature() {
+    let celsiusTemperature = Math.round(props.data.main.temp);
+    return `${celsiusTemperature}°C`;
   }
 
-  function getTemperature() {
-    let temperature = Math.round(props.data.main.temp);
-    return `${temperature}°C`;
-  }
   return (
-    <div className="WeatherForecastPreview col">
-      {getDate()}
+    <div className="ForecastCelsiusPreview col">
+      <WeatherForecastTime time={props.data.dt} />
+
       <br />
       <WeatherIcon code={props.data.weather[0].icon} />
       <br />
-      {getTemperature()}
+      {getCelsiusTemperature()}
     </div>
   );
 }
