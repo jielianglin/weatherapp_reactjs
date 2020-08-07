@@ -2,8 +2,8 @@
   font-family: "Courier New", Courier, monospace;
   border: 1px solid gray;
   border-radius: 10px;
-  padding: 60px 60px 60px 60px;
-  margin: 40px 160px 80px 160px;
+  padding: 40px 80px 40px 80px;
+  margin: 40px 180px 40px 180px;
   text-align: center;
 }
 
@@ -11,22 +11,31 @@ form {
   display: block;
   margin: 0 auto;
 }
+
+.btn {
+  position: relative;
+  right: 80px;
+}
 .search-input {
+  position: relative;
+  left: 60px;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
   height: 39px;
-  width: 100%;
+  width: 75%;
   outline: 0;
   background-color: white;
   text-align: center;
 }
 
-.Weatherinfo row {
+.WeatherInfo row {
   display: block;
   margin: 0 auto;
 }
+
 .CurrentCity {
   font-size: 50px;
+  padding: 30px 0px 0px 0px;
 }
 
 .CurrentCity:first-letter {
@@ -34,23 +43,28 @@ form {
 }
 .CurrentDateTime {
   font-size: 20px;
+  padding: 0px 0px 10px 0px;
 }
-
+.WeatherTemperature {
+  position: relative;
+  left: 40px;
+}
 .Icon img {
   position: relative;
-  top: -12px;
-  width: 150px;
-  height: 150px;
+  top: 0px;
+  left: 100px;
+  width: 140px;
+  height: 140px;
 }
 .temperature {
   position: relative;
   top: -3px;
-  font-size: 90px;
+  font-size: 100px;
 }
 
 .unit {
   position: relative;
-  top: -50px;
+  top: -60px;
 }
 
 .unit .active {
@@ -65,12 +79,19 @@ form {
 
 ul {
   position: relative;
-  top: 25px;
+  top: 37px;
+  right: 40px;
   text-align: left;
   list-style-type: none;
   inset-block: none;
+  color: #757575;
 }
 
 ul:first-letter {
   text-transform: capitalize;
+}
+
+footer {
+  position: relative;
+  top: 5px;
 }
