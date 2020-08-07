@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import WeatherForecastTime from "./WeatherForecastTime";
 
 export default function WeatherForecastPreview(props) {
-  const [unit, setUnit] = useState("celsius");
-
   let celsiusForecastTemperature = Math.round(props.data.main.temp);
 
   function getForecastCelsius() {
@@ -12,15 +10,13 @@ export default function WeatherForecastPreview(props) {
   }
 
   function getForecastFahrenheit() {
-    setUnit("fahrenheit");
-
     let fahrenheitForecastTemperature = Math.round(
       (celsiusForecastTemperature * 9) / 5 + 32
     );
     return `${fahrenheitForecastTemperature}°F`;
   }
 
-  if (unit === "celsius") {
+  if (props.units === "celsius") {
     return (
       <div className="ForecastCelsiusPreview col">
         <WeatherForecastTime time={props.data.dt} />

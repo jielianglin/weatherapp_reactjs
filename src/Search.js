@@ -8,6 +8,8 @@ export default function Search(props) {
   const [city, setCity] = useState(null);
   const [weather, setWeather] = useState({ ready: false });
   const [forecast, setForecast] = useState({ ready: false });
+  const [ready, setReady] = useState(false);
+  const [units, setUnits] = useState("celsius");
 
   function displayWeather(response) {
     setWeather({
@@ -25,6 +27,7 @@ export default function Search(props) {
   function handleForecastResponse(response) {
     console.log(response.data.list);
     setForecast(response.data.list);
+    setReady(true);
   }
 
   function handleSubmit(event) {
@@ -60,15 +63,15 @@ export default function Search(props) {
     </div>
   );
 
-  if (weather.ready) {
+  if (ready) {
     return (
       <div>
         {form}
         <br />
-        <WeatherInfo data={weather} />
+        <WeatherInfo data={weather} units={units} setUnits={setUnits} />
 
         <hr />
-        <WeatherForecast city={forecast} />
+        <WeatherForecast city={forecast} units={units} />
       </div>
     );
   } else {
