@@ -45,26 +45,23 @@ form {
   font-size: 20px;
   padding: 0px 0px 10px 0px;
 }
-.WeatherTemperature {
-  position: relative;
-  left: 40px;
-}
+
 .Icon img {
   position: relative;
-  top: 0px;
   left: 100px;
   width: 140px;
   height: 140px;
 }
 .temperature {
   position: relative;
-  top: -3px;
-  font-size: 100px;
+
+  top: 10px;
+  font-size: 90px;
 }
 
 .unit {
   position: relative;
-  top: -60px;
+  top: -38px;
 }
 
 .unit .active {
